@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.maul.jsc.dao.PublisherService;
-import com.maul.jsc.models.Book;
 import com.maul.jsc.models.Publisher;
 
 @Controller
@@ -30,7 +29,6 @@ public class PublisherController {
 	public String showNewPublisherForm(Model model) {
 		Publisher Publisher = new Publisher();
 		model.addAttribute("Publisher", Publisher);
-
 		return "publishers/new_publisher";
 	}
 	
@@ -42,7 +40,6 @@ public class PublisherController {
 	
 	@GetMapping("/edit/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
-
 		Publisher Publisher = publisherService.getPublisherById(id);
         model.addAttribute("listpublisher", publisherService.getAll());
         model.addAttribute("Publisher", Publisher);
@@ -51,7 +48,6 @@ public class PublisherController {
 
     @GetMapping("/delete/{id}")
     public String deletePublisher(@PathVariable(value = "id") long id) {
-
         this.publisherService.deletePublisherById(id);
         return "redirect:/publisher/";
     }

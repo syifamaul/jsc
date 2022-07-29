@@ -34,7 +34,6 @@ public class BookController {
         Book Book = new Book();
         model.addAttribute("Book", Book);
         model.addAttribute("listpublisher", publisherService.getAll());
-
         return "books/new_book";
     }
 
@@ -46,7 +45,6 @@ public class BookController {
 
     @GetMapping("/edit/{id}")
     public String showFormForUpdate(@PathVariable(value = "id") long id, Model model) {
-
         Book Book = bookService.getBookById(id);
         model.addAttribute("listpublisher", publisherService.getAll());
         model.addAttribute("Book", Book);
@@ -55,7 +53,6 @@ public class BookController {
 
     @GetMapping("/delete/{id}")
     public String deleteBook(@PathVariable(value = "id") long id) {
-
         this.bookService.deleteBookById(id);
         return "redirect:/book/";
     }

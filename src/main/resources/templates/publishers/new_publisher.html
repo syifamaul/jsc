@@ -16,7 +16,6 @@
 		<br />
 		<form action="#" th:action="@{/publisher/savePublisher}" th:object="${Publisher}"
 			method="post">
-
 			<table border="0" cellpadding="10">
 				<tr>
 					<td>Name:</td>
@@ -28,8 +27,7 @@
 					<td><textarea required="required" autocomplete="Off"
 						class="form-control input-sm" th:field="*{address}"></textarea></td>
 				</tr>
-				 
-				<tr>
+ 				<tr>
 					<td colspan="2"><button type="submit"
 							class="btn btn-primary btn-sm mb-3">Save</button></td>
 				</tr>

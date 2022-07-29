@@ -16,7 +16,6 @@
 		<br />
 		<form action="#" th:action="@{/book/saveBook}" th:object="${Book}"
 			method="post">
-
 			<table border="0" cellpadding="10">
 				<tr>
 					<td>Book Name:</td>
@@ -30,11 +29,11 @@
 							<option th:each="pub : ${listpublisher}" th:value="${pub.id}"
 								th:text="${pub.name}" th:selected="${publisher==pub.id}">
 							</option>
-					</select></td>
+					</select>
+					</td>
 				</tr>
 				<tr>
-					<td colspan="2"><button type="submit"
-							class="btn btn-primary btn-sm mb-3">Save</button></td>
+					<td colspan="2"><button type="submit" class="btn btn-primary btn-sm mb-3">Save</button></td>
 				</tr>
 			</table>
 		</form>
