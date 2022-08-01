@@ -21,6 +21,7 @@ public class PublisherImpl implements PublisherService {
 		this.publisherRepository.save(Publisher);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public Publisher getPublisherById(long id) {
 		return publisherRepository.getById(id);

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.maul.jsc.models.Book;
+import com.maul.jsc.models.Publisher;
 @Service
 public class BookImpl implements BookService {
 
@@ -19,10 +20,12 @@ public class BookImpl implements BookService {
 
 	@Override
 	public void saveBook(Book book) {
+		
 		this.bookRepository.save(book);
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public Book getBookById(long id) {
 		return this.bookRepository.getById(id);

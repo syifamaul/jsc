@@ -24,10 +24,10 @@
 				</tr>
 				<tr>
 					<td>Publisher Name:</td>
-					<td><select class="form-control input-sm" id="publisher">
+					<td><select class="form-control input-sm" th:field="*{publisher}" >
 							<option value="">PILIH</option>
 							<option th:each="pub : ${listpublisher}" th:value="${pub.id}"
-								th:text="${pub.name}" th:selected="${publisher==pub.id}">
+								th:text="${pub.name}">
 							</option>
 					</select>
 					</td>

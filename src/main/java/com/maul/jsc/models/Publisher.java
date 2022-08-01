@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,9 +22,7 @@ public class Publisher {
 	@Column(name = "address")
 	private String address;
 	
-	 @OneToMany(mappedBy = "publisher")
-	 private List<Book> books;
-	
+   
 	public Publisher()
 	{
 		
@@ -61,6 +58,12 @@ public class Publisher {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	@Override
+	public String toString() {
+		return "Publisher [id=" + id + ", name=" + name + ", address=" + address + "]";
+	}
+
 	
-	
+	 
 }

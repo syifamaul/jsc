@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.maul.jsc.dao.BookService;
 import com.maul.jsc.dao.PublisherService;
 import com.maul.jsc.models.Book;
+import com.maul.jsc.models.Publisher;
 
 @Controller
 @RequestMapping("/book")
@@ -32,14 +33,17 @@ public class BookController {
     @GetMapping("/new")
     public String showNewBookForm(Model model) {
         Book Book = new Book();
+       // Publisher publisher = publisherService.getPublisherById(Book.getPublisher().getId());
         model.addAttribute("Book", Book);
+      //  model.addAttribute("Publisher", publisher);
         model.addAttribute("listpublisher", publisherService.getAll());
         return "books/new_book";
     }
 
     @PostMapping("/saveBook")
-    public String saveBook(@ModelAttribute("Book") Book Book) {
-        bookService.saveBook(Book);
+    public String saveBook(@ModelAttribute("Book") Book book) {
+    
+        bookService.saveBook(book);
         return "redirect:/book/";
     }
 
